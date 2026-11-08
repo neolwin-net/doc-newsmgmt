@@ -1,0 +1,421 @@
+# Document & News Management System
+
+## 1. Project Purpose
+
+The website will be used to upload, store, search, view, download, and delete documents and publish news articles.
+
+The system will support the following file types:
+
+- PDF (.pdf)
+- Microsoft Word (.docx)
+- Microsoft Excel (.xlsx)
+- Microsoft PowerPoint (.pptx)
+- PNG (.png)
+- JPG/JPEG (.jpg, .jpeg)
+- and all other types of files
+
+The maximum upload file size will be:
+
+**2048 MB (2 GB)**
+
+The website will be deployed and operated on a Windows PC.
+
+There will be **no Admin Dashboard and no login system**. The website will provide direct access to the Document and News sections.
+
+---
+
+# 2. Website Pages
+
+The website will contain the following pages:
+
+1. Home Page
+2. Document Library Page
+3. Upload Document Page
+4. News Page
+5. Upload News Page
+6. News Detail Page
+
+---
+
+# 3. Home Page
+
+The Home Page will contain two main sections:
+
+## Documents
+
+When the visitor clicks the **Documents** section, the website will open the:
+
+**Document Library Page**
+
+## News
+
+When the visitor clicks the **News** section, the website will open the:
+
+**News Page**
+
+The Home Page should have a modern, professional, responsive design.
+
+---
+
+# 4. Document Library Page
+
+The Document Library Page will be the main page for viewing and searching documents.
+
+## Search Section
+
+The search section must be prominently displayed in the middle of the page.
+
+It should contain a large search box.
+
+Visitors must be able to search documents using:
+
+- Document Name
+- Document Category
+- Date
+
+Example:
+
+**Search Document**
+
+`[ Search by document name... ]`
+
+**Category**
+
+`[ All Categories ▼ ]`
+
+`[ Search Button ]`
+
+## Document Categories
+
+Example categories:
+
+- General
+- Networking
+- Academic
+- Reports
+- Presentations
+- Images
+
+## Document Results
+
+The search results should display:
+
+- Document Title
+- Category
+- Original File Name
+- File Size
+- Upload Date
+- Description
+
+Each document should have the following buttons:
+
+- **View**
+- **Download**
+- **Delete**
+
+When the Delete button is clicked, the system must ask for confirmation before deleting the document.
+
+When a document is deleted:
+
+1. The document information must be removed from the database.
+2. The actual uploaded file must also be deleted from the server storage.
+
+---
+
+# 5. Upload Document Page
+
+The document upload section must be on a separate page.
+
+The upload form must contain:
+
+- Document Title
+- Description
+- Category
+- File Selection
+- Upload Button
+
+Supported file types:
+
+- .pdf
+- .docx
+- .xlsx
+- .pptx
+- .png
+- .jpg
+- .jpeg
+- all other types of files
+
+Maximum file size:
+
+**2048 MB (2 GB)**
+
+The system should validate:
+
+- File type
+- File size
+- Required fields
+
+The website should display a success or error message after uploading.
+
+For large files, an upload progress indicator is recommended.
+
+---
+
+# 6. News Page
+
+The News Page must primarily display the published news.
+
+The News View must be the main section of this page.
+
+The News Upload section must be on a completely separate page.
+
+## News Search
+
+Visitors must be able to search or filter news by:
+
+- News Title/Name
+- Category
+- Date
+
+Example:
+
+`[ Search news title... ]`
+
+`[ All Categories ▼ ]`
+
+`[ Select Date ]`
+
+`[ Search Button ]`
+
+## News Categories
+
+Example categories:
+
+- General
+- Announcement
+- Technology
+- Education
+- Networking
+- Events
+
+## News View
+
+Each news item should display:
+
+- Photo
+- Title
+- Category
+- Date
+- Short text preview
+- Read More button
+- Delete button
+
+The newest news should appear first.
+
+---
+
+# 7. Upload News Page
+
+The News Upload section must be on a separate page.
+
+The upload form must contain:
+
+- News Title
+- Category
+- Photo
+- Date
+- News Text/Content
+- Publish Button
+
+The photo should support:
+
+- .png
+- .jpg
+- .jpeg
+
+After successfully publishing, the news article should automatically become available on the main News Page.
+
+---
+
+# 8. News Detail Page
+
+When the visitor clicks **Read More**, a separate News Detail Page should open.
+
+The page should display:
+
+- News Photo
+- News Title
+- Category
+- Publication Date
+- Full News Content
+
+The page should also provide a button to return to the News Page.
+
+---
+
+# 9. Delete News
+
+Each news item should include a Delete button.
+
+Before deleting:
+
+**Are you sure you want to delete this news?**
+
+`[ Cancel ] [ Delete ]`
+
+When the news is deleted:
+
+1. The news record must be deleted from the database.
+2. The associated photo must also be deleted from server storage.
+
+---
+
+# 10. Recommended Technology
+
+## Front End
+
+Use:
+
+- HTML5
+- CSS3
+- JavaScript
+
+The design should be:
+
+- Modern
+- Professional
+- Responsive
+- Easy to use
+- Compatible with desktop and mobile devices
+
+## Back End
+
+Use:
+
+- Node.js
+- Express.js
+
+Node.js and Express.js will handle:
+
+- File uploads
+- File downloads
+- Document search
+- News search
+- Database operations
+- File deletion
+- News deletion
+
+## Database
+
+Use:
+
+**SQLite**
+
+SQLite is recommended because:
+
+- It is simple to install.
+- It works well on a Windows PC.
+- It does not require a separate database server.
+- It is suitable for a local Document and News website.
+
+---
+
+# 11. File Storage
+
+Uploaded files should be stored locally on the Windows PC.
+
+Recommended structure:
+
+```text
+document-news-system/
+│
+├── public/
+│   ├── index.html
+│   ├── documents.html
+│   ├── upload-document.html
+│   ├── news.html
+│   ├── upload-news.html
+│   ├── news-detail.html
+│   │
+│   ├── css/
+│   │   └── style.css
+│   │
+│   └── js/
+│       ├── home.js
+│       ├── documents.js
+│       ├── upload-document.js
+│       ├── news.js
+│       ├── upload-news.js
+│       └── news-detail.js
+│
+├── uploads/
+│   ├── documents/
+│   └── news/
+│
+├── data/
+│   └── website.db
+│
+├── server.js
+├── database.js
+├── package.json
+└── README.md
+```
+
+---
+
+# 12. Required Features Summary
+
+## Documents
+
+- Upload Document
+- Search by Name
+- Search by Category
+- View Document
+- Download Document
+- Delete Document
+- Upload Date
+- File Size
+- File Type Validation
+- Maximum Upload Size: 1024 MB
+
+## News
+
+- Publish News
+- Upload Photo
+- News Title
+- News Category
+- News Date
+- News Text
+- Search by Name
+- Search by Category
+- Search by Date
+- Read More
+- News Detail Page
+- Delete News
+
+## System
+
+- SQLite Database
+- Local File Storage
+- Confirmation Before Deletion
+- Delete Associated Files
+- Error Messages
+- Success Messages
+- Responsive Design
+- Windows PC Deployment
+- No Admin Dashboard
+- No Login System
+
+---
+
+# 13. Important Behavior
+
+The Document Library and News Page must be primarily designed for viewing and searching content.
+
+Uploading must not be placed inside the main Document Library or main News View.
+
+Instead:
+
+- **Document Library → Separate Upload Document Page**
+- **News View → Separate Upload News Page**
+
