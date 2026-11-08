@@ -1,0 +1,10 @@
+
+Server.js 
+
+New-NetFirewallRule `
+-DisplayName "LAN HTTP Server" `
+-Direction Inbound `
+-Protocol TCP `
+-LocalPort 80 `
+-Action Allow `
+-Profile Any
